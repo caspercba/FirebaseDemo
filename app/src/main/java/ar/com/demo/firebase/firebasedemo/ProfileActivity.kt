@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.os.PersistableBundle
 import android.support.v7.app.AppCompatActivity
 import android.util.Log
+import com.crashlytics.android.Crashlytics
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_profile.*
 
@@ -19,6 +20,8 @@ class ProfileActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_profile)
         signout.setOnClickListener { signout() }
+        crash.setOnClickListener { crash() }
+        crash2.setOnClickListener { crash2() }
     }
 
     override fun onStart() {
@@ -52,6 +55,13 @@ class ProfileActivity : AppCompatActivity() {
         FirebaseAuth.getInstance().signOut()
         startActivity(Intent(this, MainActivity::class.java))
         finish()
+    }
 
+    fun crash() {
+        Crashlytics.getInstance().crash()
+    }
+
+    fun crash2() {
+        throw RuntimeException("This is fucked up!")
     }
 }

@@ -62,5 +62,23 @@
         android:text="Sign out"
         android:layout_below="@id/email_container"/>
 
+    <Button
+        android:id="@+id/crash"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="Crash!"
+        android:layout_below="@id/signout"/>
+
+    <Button
+        android:id="@+id/crash2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="Crash runtimeException!"
+        android:layout_below="@id/crash"/>
+
+
+
 
 </RelativeLayout>
